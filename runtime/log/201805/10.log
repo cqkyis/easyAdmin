@@ -1,0 +1,643 @@
+---------------------------------------------------------------
+[ 2018-05-10T13:34:32+08:00 ] 192.168.3.8 GET /admin/dept/index.html
+[ info ] 192.168.3.8/admin/dept/index.html [运行时间：0.107000s][吞吐率：9.35req/s] [内存消耗：1,991.44kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/dept/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\dept\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+  2 => 'name',
+  3 => 'title',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'dept/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:34:32+08:00 ] 192.168.3.8 GET /admin/dept/deptlist.html?sort=orderby
+[ info ] 192.168.3.8/admin/dept/deptlist.html?sort=orderby [运行时间：0.116000s][吞吐率：8.62req/s] [内存消耗：1,878.35kb] [文件加载：83]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/dept/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'orderby',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'dept/deptlist' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_dept` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_dept` ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:34:33+08:00 ] 192.168.3.8 GET /admin/user/index.html
+[ info ] 192.168.3.8/admin/user/index.html [运行时间：0.099000s][吞吐率：10.10req/s] [内存消耗：2,137.77kb] [文件加载：90]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/dept/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\user\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'user/index' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:34:33+08:00 ] 192.168.3.8 GET /admin/user/assets/images/favicon_1.ico
+[ info ] 192.168.3.8/admin/user/assets/images/favicon_1.ico [运行时间：0.103000s][吞吐率：9.71req/s] [内存消耗：1,930.70kb] [文件加载：89]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/user/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'favicon_1.ico',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'user/assets' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:34:50+08:00 ] 192.168.3.8 GET /admin/user/index.html
+[ info ] 192.168.3.8/admin/user/index.html [运行时间：0.104000s][吞吐率：9.62req/s] [内存消耗：1,982.17kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\user\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'user/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:36:21+08:00 ] 192.168.3.8 GET /admin/user/index.html
+[ info ] 192.168.3.8/admin/user/index.html [运行时间：0.099000s][吞吐率：10.10req/s] [内存消耗：1,982.17kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\user\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'user/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:37:13+08:00 ] 192.168.3.8 GET /admin/user/index.html
+[ info ] 192.168.3.8/admin/user/index.html [运行时间：0.108000s][吞吐率：9.26req/s] [内存消耗：2,140.08kb] [文件加载：90]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\user\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+  2 => 'name',
+  3 => 'title',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'user/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T13:57:54+08:00 ] 192.168.3.8 GET /admin/role/index.html
+[ info ] 192.168.3.8/admin/role/index.html [运行时间：0.171000s][吞吐率：5.85req/s] [内存消耗：2,101.73kb] [文件加载：91]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\role\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+  2 => 'list',
+  3 => 'name',
+  4 => 'title',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'role/index' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_role` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ky_system_role` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_role` ORDER BY `role_id` ASC LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-05-10T14:05:54+08:00 ] 192.168.3.8 GET /admin/index/index.html
+[ info ] 192.168.3.8/admin/index/index.html [运行时间：0.159000s][吞吐率：6.29req/s] [内存消耗：1,989.02kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/role/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'index/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T14:05:55+08:00 ] 192.168.3.8 GET /admin/index/index.html
+[ info ] 192.168.3.8/admin/index/index.html [运行时间：0.101000s][吞吐率：9.90req/s] [内存消耗：1,989.08kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'index/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T14:05:57+08:00 ] 192.168.3.8 GET /admin/index/index.html
+[ info ] 192.168.3.8/admin/index/index.html [运行时间：0.103000s][吞吐率：9.71req/s] [内存消耗：1,989.08kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'index/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T14:05:59+08:00 ] 192.168.3.8 GET /admin/index/index.html
+[ info ] 192.168.3.8/admin/index/index.html [运行时间：0.102000s][吞吐率：9.80req/s] [内存消耗：1,989.08kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'index/index' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-05-10T14:06:00+08:00 ] 192.168.3.8 GET /admin/index/index.html
+[ info ] 192.168.3.8/admin/index/index.html [运行时间：0.098000s][吞吐率：10.20req/s] [内存消耗：1,989.08kb] [文件加载：88]
+[ info ] [ LANG ] E:\kyweixin\EasyAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=h0h9jq1p8ttjb8me7jf877u9l6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://192.168.3.8/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.3.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\kyweixin\EasyAdmin\cqkyicms\admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'mp',
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=easyadmin;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_user_role` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_user_role` `a` INNER JOIN `ky_system_role` `g` ON `a`.`role_id`=`g`.`role_id` WHERE  ( a.uid='1' and g.status='1' ) [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ky_system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=0 ) ORDER BY `orderby` ASC [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=1 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=16 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=28 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=37 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=39 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=40 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=41 ) ORDER BY `orderby` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ky_system_menu` WHERE  ( parent_id=25 ) ORDER BY `orderby` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`parent_id` FROM `ky_system_menu` WHERE  `menu_role` = 'index/index' LIMIT 1 [ RunTime:0.001000s ]

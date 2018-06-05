@@ -1,0 +1,39 @@
+<view>
+<swiper indicator-dots="true"
+  autoplay="false"  class='swiper' indicator-active-color="#ff4891" circular="true" style='height:200px'>
+  
+  
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+  </swiper>
+
+</view>
+<!--名称内容  -->
+<view class='good-header'>
+ <text class='good-title'>50%以上的果汁都有它</text>
+ <text class='good-s-title'>广西百香果50-70g*5个</text>
+</view>
+<view class='good-price' >
+  <text class='price left'>￥13.9</text>
+  <text class='mall-price'>￥10.9</text>
+  <text class='right'>已售161505份</text>
+</view>
+<view class='good-cont'>
+ <view class='title'>商品详情</view>
+ <view class='cont'>
+ fdsafdasfdsafdafdsa
+ 
+ </view>
+</view>
+
+
+<!--购物车  -->
+<view class='good-bottom'>
+ <view class='good-cart'>
+  <text class='iconfont icon-gouwuche'></text>
+ </view>
+ <view class='good-buy'>加入购物车</view>
+</view>
