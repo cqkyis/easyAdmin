@@ -1,4 +1,4 @@
-var AjaxUrl = "http://www.icqkx.cn/weixin";
+var AjaxUrl = "https://www.icqkx.com/weixin";
 var Ajax_Home = AjaxUrl + "/index";
 var Ajax_Home_Good_List = AjaxUrl + "/index/cate";
 var Ajax_Wxlogin = AjaxUrl+"/user/wxlogin";

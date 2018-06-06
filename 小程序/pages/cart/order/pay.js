@@ -22,8 +22,7 @@ Page({
     });
     //console.log(options);
     var userId=wx.getStorageSync('user');
-    // var addressId = wx.getStorageSync('selectaddress');
-    // console.log(addressId);
+    
    var code = wx.getStorageSync('code');
     wx.request({
       url: pays.OrderList,
@@ -50,7 +49,7 @@ Page({
 
     var id = e.currentTarget.dataset.id;
     wx.setStorageSync('addressId', id);
-   // console.log(wx.getStorageSync('addressId'));
+   
     wx.navigateTo({
       url: '../../user/address/list',
     })
@@ -67,7 +66,7 @@ Page({
       adid: selid
     },
     success:function(r){
-      //console.log(r);
+      
       if(r.data.code==1){
       that.setData({
            
@@ -78,7 +77,7 @@ Page({
            show:0
           })
     }else{
-      //console.log("还没有地址哟！");
+      
       that.setData({
         show:1
       })
@@ -140,30 +139,63 @@ Page({
    // console.log(that.data.relaprice);
     var user =wx.getStorageSync('user');
     var code = wx.getStorageSync('code');
-    wx.request({
-      url: pays.PayOrder,
-      data:{
-        openid: user.openid,
-        order_sn: code,
-        total_fee: that.data.relaprice,
+    console.log(that.data.adId);
+    var adId = that.data.adId;
+    if(!adId){
+      //console.log(adId);
+  
+      wx.showToast({
+        title: '你还没有选择收货地址',
+        icon: 'none',
+        duration: 1500
+      })
 
-      },
-      success:function(r){
-       console.log(r);
-       wx.requestPayment({
-         timeStamp: r.data.timeStamp,
-         nonceStr: r.data.nonceStr,
-         package: r.data.package,
-         signType: r.data.signType,
-         paySign: r.data.paySign,
-         success:function(e){
-           console.log(e.data);
-         },fail:function(s){
-           console.log(s);
-         }
-       })
 
-      }
-    })
+
+    }else{
+
+      wx.request({
+        url: pays.PayOrder,
+        data: {
+          openid: user.openid,
+          order_sn: code,
+          total_fee: that.data.relaprice,
+          adid: adId
+        },
+        success: function (r) {
+         // console.log(r.data);
+          wx.requestPayment({
+            timeStamp: r.data.timeStamp,
+            nonceStr: r.data.nonceStr,
+            package: r.data.package,
+            signType: r.data.signType,
+            paySign: r.data.paySign,
+            success: function (e) {
+              console.log(e);
+              if (e.errMsg =="request:ok"){
+                  wx.navigateTo({
+                    url: '../../user/index',
+                  })
+              }
+              if (e.errMsg == "requestPayment:fail cancel"){
+              wx.showToast({
+                title: '取消了支付',
+                icon:'none',
+                duration:1500
+              })
+              }
+            }, fail: function (s) {
+              console.log(s);
+            }
+          })
+
+        }
+      })
+
+
+
+    
+    }
+ 
   }
 })

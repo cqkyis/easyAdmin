@@ -53,22 +53,22 @@
 <view class='cart-price'>
 <view class='clist'>
  <text class='left'>商品总价</text>
- <text class='right'>￥{{allprice}}</text>
+ <text class='right'>￥{{toalpric}}</text>
 </view>
 
 
 <view class='clist'>
  <text class='left'>商品实付</text>
- <text class='right'>￥{{allprice}}</text>
+ <text class='right'>￥{{compay}}</text>
 </view>
 
 <view class='clist '>
  <text class='left'>配送费</text>
- <text class='right'>￥{{feeprice}}</text>
+ <text class='right'>￥{{disfee}}</text>
 </view>
 <view class='clist'>
  
- <view class='right'>合计：<text class="allprice">￥{{relaprice}}</text></view>
+ <view class='right'>合计：<text class="allprice">￥{{toal}}</text></view>
 </view>
 </view>
 <view class='h44'></view>
@@ -81,10 +81,16 @@
  </view>
   
   <view class='boprice'>
-   <text class='boall'>合计：￥{{relaprice}}</text>
-   <text class='boyf'>配送费：￥{{feeprice}}</text>
+   <text class='boall'>合计：￥{{toal}}</text>
+   <text class='boyf'>配送费：￥{{disfee}}</text>
   </view>
  </view>
  <view class='w25 left' bindtap='creatOrder'>去结算<text class='iconfont icon-shangjiantou'></text></view>
 </view>
 </view>
+<!--
+ 商品总价：toalpric
+ 商品实付：compay
+ 配送费：disfee
+ 合计：toal
+-->

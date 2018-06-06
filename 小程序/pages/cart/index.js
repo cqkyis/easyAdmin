@@ -8,10 +8,9 @@ Page({
     goodlist:'',
     types:'hide',
     headerhide:'show',
-    allprice:'',
+  
     paidprice:'',
-    relaprice:'',
-    feeprice:'0'
+    
    
   },
   onLoad: function () {
@@ -19,29 +18,21 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的购物车',
     });
-    wx.request({
-      url: Orders.MallConfig,
-      success: function (r) {
-        console.log(r);
-        
-        self.setData({
-          feeprice: r.data.postprice,
-          sendtime: r.data.sendtime,
-          pm: r.data.mprice
-        })
-         wx.setStorageSync('pm', r.data.mprice);
-       
-      }
-    });
-  
+    var config = wx.getStorageSync('goodconfig'); 
+    console.log(config); 
+    self.setData({
+      disfee: config.data.postprice,
+      sendtime: config.data.sendtime,
+      pm: config.data.mprice
+    })
   },
     onShow: function () {
      
       var that = this;
-       //var pmt=1;
+      
     
        
-      var pm = wx.getStorageSync('pm');  
+      var config = wx.getStorageSync('goodconfig');  
          
       var Cart = wx.getStorageSync('cart');
       
@@ -58,15 +49,15 @@ Page({
              })
       }else{
       
-       // console.log(wx.getStorageSync('cart'));
+      
          
         allgood = Cart.productlist;
       
-     if(parseFloat(Cart.totalAmount)>=pm){
+        if (parseFloat(Cart.totalAmount) >= config.data.mprice){
      
        that.setData({
          mm:'hide',
-         feeprice:0
+         disfee:0
        });
 
      }else{
@@ -74,19 +65,21 @@ Page({
        
        that.setData({
          mm:'show',
-         cm: (parseFloat(pm)- parseFloat(Cart.totalAmount)).toFixed(2),
-         feeprice: 0 
+         cm: (parseFloat(config.data.mprice)- parseFloat(Cart.totalAmount)).toFixed(2),
+         disfee: config.data.postprice 
        })
      }
-console.log("fdsafdsafdsa"+that.data.feeprice);
-        var relaprice = (parseFloat(Cart.totalAmount) + parseFloat(that.data.feeprice)).toFixed(2);
+
+        var relaprice = (parseFloat(Cart.totalAmount) + parseFloat(that.data.disfee)).toFixed(2);
         console.log(relaprice);
         that.setData({
           goodlist: Cart.productlist,
           headerhide:'hide',
           types:'show',
-          allprice: Cart.totalAmount,
-          relaprice: relaprice
+          toalpric: Cart.totalAmount,
+
+          compay: Cart.totalAmount,
+          toal: relaprice
         });
        
           wx.setTabBarBadge({
@@ -143,11 +136,10 @@ console.log("fdsafdsafdsa"+that.data.feeprice);
     var that = this;
     //console.log(Logins.userInfo());
     var userInfo = wx.getStorageSync('user');
-    console.log(wx.getStorageSync('user'));
+    
     var cart = wx.getStorageSync('cart');
-    var feeprice = that.data.feeprice;
-    console.log("这是什么呢" + feeprice)
-    console.log(cart);
+    var feeprice = that.data.disfee;
+   
     if(!userInfo){
       //没有值的情况下
       wx.showToast({

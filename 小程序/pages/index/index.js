@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var base = require("../../common/base.js");
+var configs = require('../../utils/common.js');
 var amapFile = require('../../utils/amap-wx.js');
 var CartJs = require("../../utils/cart.js");
 var allgood=null;
@@ -52,6 +53,13 @@ Page({
       // });
 
       var that = this;
+      wx.request({
+        url: configs.MallConfig,
+        success: function (r) {
+          console.log(r);
+          wx.setStorageSync('goodconfig', r);
+        }
+      });
        //获取分类数据
        wx.request({
          url: base.Ajax_Home,
@@ -60,7 +68,7 @@ Page({
          },
          method: 'POST',
          success: function (res) {
-           console.log(res.data);
+          // console.log(res.data);
            var cateData = res.data;
            //默认展示第一个
            that.LoadGood(cateData[0]['cate_id']);
@@ -78,7 +86,7 @@ Page({
       var myAmapFun = new amapFile.AMapWX({ key: '4215ecb5bc0ec372a5637590891246d4' });
       myAmapFun.getRegeo({
         success: function (data) {
-          console.log(data);
+          //console.log(data);
           that.setData({
             address: data[0].desc
           });
@@ -138,7 +146,7 @@ Page({
         },
         method: 'POST',
         success:function(res){
-         console.log(res); 
+         //console.log(res); 
          //将取得的产品放入allgood
          allgood = res.data.data;
          that.cartUpdat(res.data.data);
@@ -172,14 +180,14 @@ Page({
   }, 
   cartUpdat:function(e){
     var that = this;
-    console.log(e);
+    //console.log(e);
     
     //console.log(e);
     var cart = wx.getStorageSync("cart");
     if (!cart) {
-      console.log(cart);
+     // console.log(cart);
     } else {
-      console.log(cart);//有值的情况下
+      //console.log(cart);//有值的情况下
       var nums = cart.totalNumber;
       //console.log(nums);
       wx.setTabBarBadge({
@@ -232,7 +240,7 @@ Page({
     
   },
   cartClick:function(e){
-    console.log(e);
+    //console.log(e);
     var id = e.currentTarget.dataset.id;
     
     var that = this;
