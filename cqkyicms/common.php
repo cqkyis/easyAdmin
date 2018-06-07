@@ -81,5 +81,35 @@ function rand_string($len = 6, $type = '', $addChars = ''){
     return $str;
 
 }
-//微信端
+//小程序
+function wechatApp($type = ''){
+    static $wechat = array();
+    $index = md5(strtolower($type));
+    if (!isset($wechat[$index])) {
+      $res=  \think\Db::name('system_weixin')->where('type',2)->find();
 
+        $config = [
+            'appid'           => $res['appid'], // 填写高级调用功能的app id, 请在微信开发模式后台查询
+            'appsecret'       => $res['appsecret'], // 填写高级调用功能的密钥
+            'encodingaeskey'  => $res['encodingaeskey'], // 填写加密用的EncodingAESKey（可选，接口传输选择加密时必需）
+            'mch_id'          => $res['mch_id'], // 微信支付，商户ID（可选）
+            'partnerkey'      => $res['partnerkey'], // 微信支付，密钥（可选）
+        ];
+
+
+        $config['cachepath'] =\think\facade\Env::get('runtime_path') . 'cache/'. 'Data/';
+        $wechat[$index] =  \Wechat\Loader::get($type,$config); //    Loader::get($type, $config);
+    }
+    return $wechat[$index];
+}
+/**
+ * 验证手机号是否正确
+ * @author honfei
+ * @param number $mobile
+ */
+function isMobile($mobile) {
+    if (!is_numeric($mobile)) {
+        return false;
+    }
+    return preg_match('#^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$#', $mobile) ? true : false;
+}

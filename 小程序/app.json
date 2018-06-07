@@ -9,7 +9,9 @@
     "pages/user/address/map",
     "pages/user/login/login",
     "pages/good/info",
-    "pages/cart/order/pay"
+    "pages/cart/order/pay",
+    "pages/user/order/all",
+    "pages/user/order/list"
     
     
   ],

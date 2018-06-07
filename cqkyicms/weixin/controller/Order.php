@@ -74,4 +74,34 @@ class Order extends Controller
         return json(['nopay'=>$unpaid,'send'=>$send,'sendtime'=>$sendtime,'outpay'=>$outpay,'orderbj'=>$orderbj]);
 
     }
+
+    public function userallorder(){
+        $uid = input('uid');
+        $res=db('order')->where('uid',$uid)->order('orderId desc')->select();
+        foreach ($res as $k=>$v){
+            $goodres = db('order_goods')->where('ordercode',$v['ordercode'])->select();
+            foreach ($goodres as $k1=>$v1){
+                $one = db('good')->field('good_img')->where('good_id',$v1['good_id'])->find();
+                $goodres[$k1]['good_img']= request()->root(true).'/uploads/'.$one['good_img'];
+            }
+            $res[$k]['goodlist']=$goodres;
+        }
+        return json($res);
+    }
+
+
+    public function userorderlist(){
+        $uid = input('uid');
+        $status = input('status');
+        $res=db('order')->where('uid = '.$uid.' and stauts='.$status)->order('orderId desc')->select();
+        foreach ($res as $k=>$v){
+            $goodres = db('order_goods')->where('ordercode',$v['ordercode'])->select();
+            foreach ($goodres as $k1=>$v1){
+                $one = db('good')->field('good_img')->where('good_id',$v1['good_id'])->find();
+                $goodres[$k1]['good_img']= request()->root(true).'/uploads/'.$one['good_img'];
+            }
+            $res[$k]['goodlist']=$goodres;
+        }
+        return json($res);
+    }
 }

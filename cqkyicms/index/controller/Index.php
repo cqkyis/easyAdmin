@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use service\AliyunService;
 use think\Controller;
+use think\facade\Session;
 
 class Index extends Controller
 {
@@ -34,4 +35,15 @@ class Index extends Controller
     public function test(){
        return json(rand_string(4,1)) ;
     }
+
+
+    public function se(){
+        $code = rand_string(4,1);
+        Session::set('ss',$code);
+        $this->demo();
+    }
+    public function demo(){
+        dump(Session::get('ss'));
+    }
+
 }

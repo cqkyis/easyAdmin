@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var base = require("../../common/base.js");
+//var base = require("../../common/base.js");
 var configs = require('../../utils/common.js');
 var amapFile = require('../../utils/amap-wx.js');
 var CartJs = require("../../utils/cart.js");
@@ -35,7 +35,7 @@ Page({
     //建立连接
 
       // wx.connectSocket({
-      //   url: 'wss://localhost:2346',
+      //   url: 'wss://www.icqkx.com:2346',
       //   data: {
       //     x: '',
       //     y: ''
@@ -62,7 +62,7 @@ Page({
       });
        //获取分类数据
        wx.request({
-         url: base.Ajax_Home,
+         url: configs.Ajax_Home,
          header: {
            'content-type': 'application/json'
          },
@@ -136,7 +136,7 @@ Page({
       })
 
       wx.request({
-        url: base.Good_Cate_list,
+        url: configs.Good_Cate_list,
         header: {
           'content-type': 'application/json'
         },
@@ -174,22 +174,21 @@ Page({
      
     },
   goodinfo:function(e){
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../good/info',
+      url: '../good/info?goodid='+id,
     })
   }, 
   cartUpdat:function(e){
     var that = this;
-    //console.log(e);
-    
-    //console.log(e);
+   
     var cart = wx.getStorageSync("cart");
     if (!cart) {
-     // console.log(cart);
+     
     } else {
-      //console.log(cart);//有值的情况下
+      
       var nums = cart.totalNumber;
-      //console.log(nums);
+      
       wx.setTabBarBadge({
         index: 1,
         text: nums.toString()

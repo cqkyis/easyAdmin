@@ -1,7 +1,7 @@
 // pages/user/login/login.js
 
 var Logins = require("../../../utils/common.js");
-
+var interval = null //倒计时函数
 Page({
 
   /**
@@ -12,6 +12,8 @@ Page({
     $loading: {
       isShow: false
     },
+    time: '获取验证码', //倒计时 
+    currentTime: 610
   },
 
   /**
@@ -144,5 +146,105 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  formSubmit: function (e) {
+    //console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    var phone = e.detail.value.phone;
+    var code = e.detail.value.code;
+    //console.log(code);
+    wx.request({
+      url: Logins.UserLogin,
+      data:{
+        phone:phone,
+        code:code
+      },
+      success:function(res){
+        console.log(res);
+            if(res.data.code==2){
+              //如果错误显示
+              wx.showToast({
+                title: res.data.msg,
+                icon:'none',
+                
+              })
+            }else{
+              console.log(res);
+              console.log(res.data);
+              wx.setStorageSync('user', res.data);
+              wx.showToast({
+                title: '登录成功',
+
+                icon: 'success',
+                duration: 2000
+              });
+
+              setTimeout(function () {
+                //要延时执行的代码  
+                wx.switchTab({
+                  url: '../index',
+                  success: function (e) {
+                    var page = getCurrentPages().pop();
+                    if (page == undefined || page == null) return;
+                    page.onLoad();
+
+                  }
+                })
+              }, 2000)
+
+            }
+      }
+    })
+    
+
+  },
+  userphone: function (e) {
+    this.setData({
+      userphone: e.detail.value
+    })
+  },
+  getCode: function (options) {
+    var that = this;
+    var currentTime = that.data.currentTime
+    interval = setInterval(function () {
+      currentTime--;
+      that.setData({
+        time: parseInt(currentTime/10) + '秒'
+      })
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          time: '重新发送',
+          currentTime: 610,
+          disabled: false
+        })
+      }
+    }, 100)
+  },
+  sendcode:function(){
+    // console.log("用户名：" + this.data.userphone);
+    // //var phone = this.data.userphone;
+    var that =this;
+    wx.request({
+      url: Logins.UserCode,
+      data:{
+        phone: that.data.userphone
+      },
+      success:function(res){
+        console.log(res.data);
+        if(res.data.code==1){
+          that.getCode();
+          that.setData({
+      disabled: true
+    })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon:'none'
+          })
+        }
+      }
+    })
+    
+    
   }
 })

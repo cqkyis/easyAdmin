@@ -6,7 +6,7 @@
    <text class='u'>{{item.contacts}}  {{item.phone}}</text>
    <text class='a'>{{item.readdress}}{{item.doorno}}</text>
   </view>
-  <view class='col-xs-2 left'  bindtap='selectAddress' data-id="{{item.adId}}"   wx:if="{{item.addressId!=Undefined}}">
+  <view class='col-xs-2 left'  bindtap='selectAddress' data-id="{{item.adId}}"   wx:if="{{item.addressId!=Undefined&&item.addressId!=''}}">
   <radio></radio>
   </view> 
   <view class='col-xs-2 left ' wx:else >

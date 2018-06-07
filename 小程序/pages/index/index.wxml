@@ -1,8 +1,8 @@
 
 <view> <wxc-loading
    is-show="{{$loading.isShow}}"
-    image="https://s10.mogucdn.com/mlcdn/c45406/170607_5241335cb37ka3ab7781ddh504ggh_200x200.png"
-    slip="https://s10.mogucdn.com/p1/160715/upload_ifrgmmzwmyydknldhezdambqmeyde_200x200.png"
+    image="https://www.icqkx.com/static/wx/loging.png"
+    slip="https://www.icqkx.com/static/wx/logings.png"
   ></wxc-loading> 
 </view>
 <!--首页头部  -->
@@ -50,7 +50,7 @@
   <view class='warp'>
  <block wx:for="{{goodlist}}" wx:key="{{index}}">
    <view class='list'>
-    <image bindtap='goodinfo' class='list-img left' src='{{item.good_img}}'></image>
+    <image bindtap='goodinfo' class='list-img left' data-id='{{item.good_id}}' src='{{item.good_img}}'></image>
     <view class='list-body'>
       <text class='list-name left'>{{item.good_name}}</text>
       <text class='list-s-name'>{{item.good_s_name}}</text>

@@ -1,6 +1,18 @@
 /* pages/good/info.wxss */
 @import "../../common/font.wxss";
 @import "../../common/base.wxss";
+@import "../../utils/wxParse/wxParse.wxss";
+.content{
+  /* margin-bottom: 20px; */
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-between;
+/* padding:20px 10px; */
+box-sizing:border-box;
+top:10px;
+}
 .swiper-item{
   width: 100%;
 }
@@ -66,7 +78,7 @@
 .good-bottom{
   position: fixed;
   height: 88rpx;
-  line-height: 88rpx;
+  /* line-height: 88rpx; */
   border-top: #ddd solid 1px;
   bottom: 0;
   width: 100%
@@ -75,10 +87,11 @@
   width: 15%;
   float: left;
   text-align: center;
-  
+  background: #ffffff
 }
 .good-cart .iconfont{
   font-size: 48rpx;
+  line-height: 88rpx;
 }
 .good-buy{
   width: 85%;
@@ -86,5 +99,19 @@
   text-align: center;
   background: #ff4891;
   color: #ffffff;
-  font-size: 32rpx
+  font-size: 32rpx;
+  line-height: 88rpx;
+}
+.good-cart .bage{
+  position: absolute;
+  top: 5px;
+  
+  background: #ff4891;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 10px;
+  left: 8%;
+  color: #ffffff;
+  line-height: 20px
 }

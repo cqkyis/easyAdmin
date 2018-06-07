@@ -4,32 +4,48 @@ var orders= require("../../utils/common.js");
 Page({
   data: {
    nickname:'登录/注册',
-   face:'../../common/images/icon.png'
-
+   face:'../../common/images/icon.png',
+   nopay:0,
+   send:0,
+   sendtime:0,
+   outpay:0,
+   orderbj:0
   },
   onLoad:function(){
-    var userInfo = wx.getStorageSync('user');
-    
+    //var userInfo = wx.getStorageSync('user');
+    wx.setNavigationBarTitle({
+      title: '会员中心',
+    })
   },
   onShow:function(){
+        console.log("执行了一次");
     //获取用户信息
     var userInfo = wx.getStorageSync('user');
     var that = this;
-    if(!userInfo){
-      
-      this.setData({
-        nickname:'登录/注册',
-        face: '../../common/images/icon.png'
-      })
-    }else{
-      
-     
-      this.setData({
-        nickname:userInfo.nickname,
-        face:userInfo.face
+    //that.onLoad();
+    if(userInfo){
+
+      that.setData({
+        show:false,
+        nickname: userInfo.nickname,
+        face: userInfo.face
       });
       //查询用户订单
       that.showOrder(userInfo.uid);
+      
+    }else{
+      that.setData({
+        show: true,
+        nickname: '登录/注册',
+        face: '../../common/images/icon.png',
+        nopay: 0,
+        send: 0,
+        sendtime: 0,
+        outpay: 0,
+        orderbj: 0
+      });
+
+     
     }
 
 
@@ -90,6 +106,59 @@ Page({
     wx.navigateTo({
       url: 'login/login'
     })
+  },
+  allorder:function(){
+    
+    var userInfo = wx.getStorageSync('user');
+
+    if (!userInfo) {
+      wx.showToast({
+        title: '你还没有登录,请先登录',
+        icon: 'none',
+        duration: 2000
+      })
+      setTimeout(function () {
+        wx.navigateTo({
+          url: 'login/login'
+        })
+      }, 2000)
+
+
+
+    } else {
+
+      wx.navigateTo({
+        url: 'order/all' 
+      })
+    }
+    
+    
+    
+   
+  },
+  orderstatus:function(r){
+    var id = r.currentTarget.dataset.id;
+    var userInfo = wx.getStorageSync('user');
+    if (!userInfo) {
+      wx.showToast({
+        title: '你还没有登录,请先登录',
+        icon: 'none',
+        duration: 2000
+      })
+      setTimeout(function () {
+        wx.navigateTo({
+          url: 'login/login'
+        })
+      }, 2000)
+
+
+
+    } else {
+
+      wx.navigateTo({
+        url: 'order/list?id='+id
+      })
+    }
   }
 
 })

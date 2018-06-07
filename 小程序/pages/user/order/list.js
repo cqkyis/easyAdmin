@@ -1,4 +1,5 @@
-// pages/user/set/index.js
+// pages/user/order/list.js
+var orders = require("../../../utils/common.js");
 Page({
 
   /**
@@ -12,34 +13,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-  logout:function(){
-    wx.removeStorageSync('user');
-    wx.showToast({
-      title: '退出成功',
-
-      icon: 'success',
-      duration: 2000
-    });
-
-    setTimeout(function () {
-      //要延时执行的代码  
-      wx.switchTab({
-        url: '../index',
-        success: function (e) {
-          var page = getCurrentPages().pop();
-          if (page == undefined || page == null) return;
-          page.onShow();
-
-        }
-      })
-
-
-    }, 2000)
-
-
-   
+   console.log(options.id);
+   var that = this;
+   var user = wx.getStorageSync('user');
+   wx.request({
+     url: orders.OrderUserList,
+     data: {
+       uid: user.uid,
+       status:options.id
+     },
+     success: function (res) {
+       console.log(res);
+       that.setData({
+         orderlist: res.data
+       });
+     }
+   })
   },
 
   /**
@@ -89,13 +78,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  clear:function(){
-    wx.clearStorageSync();
-    wx.showToast({
-      title: '清除缓存成功',
-      icon: 'success',
-      duration: 2000
-    })
   }
 })

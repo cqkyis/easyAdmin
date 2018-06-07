@@ -79,6 +79,7 @@ class Good extends Base
             $data['good_code']=rand_string(4,1);
             $data['wx_title']=input('wx_title');
             $data['wx_cont']=input('wx_cont');
+            $data['context']=input('context');
             $imgs  = input('allimg/a');
             $good = new GoodModel();
             $result = $good->add($data,$imgs);

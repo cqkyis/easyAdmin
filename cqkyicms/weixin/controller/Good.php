@@ -23,4 +23,16 @@ class Good extends Controller
         }
     }
 
+
+    public function infos(){
+        $id = input('id');
+        $res = db('good')->where('good_id',$id)->find();
+        $res['good_img']= request()->root(true).'/uploads/'.$res['good_img'];
+        $imgs = db('good_imgs')->where('good_id',$id)->select();
+        foreach ($imgs as $k=>$v){
+            $imgs[$k]['imgs']=request()->root(true).'/uploads/'.$v['imgs'];
+        }
+        $res['imgs']=$imgs;
+        return json($res);
+    }
 }

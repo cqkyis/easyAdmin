@@ -24,10 +24,11 @@ Page({
     var that = this;
     var user = wx.getStorageSync('user');
     var addressId =wx.getStorageSync('addressId');
+    console.log(addressId);
     wx.setNavigationBarTitle({
       title: '我的收货地址',
     }) 
-    console.log(options);
+    //console.log(options);
     
     wx.request({
       url: UserJs.Uaddress,
